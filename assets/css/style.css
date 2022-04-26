@@ -19,14 +19,12 @@ main{
     height: 100vh;
     background-color: var(--ligh-bg);
     position: relative;
-
 }
 
 .top_green{
     height: 10vh;
     background-color: var(--success-bg);
 }
-
 
 .main_container{
     width: 80vw;
@@ -36,8 +34,6 @@ main{
     position: relative;
     bottom: 8vh;
 }
-
-
 
 
 /* contacts zone */
@@ -143,16 +139,19 @@ main{
     width: 100%;
 }
 
-.user-text{
+.user-text .text{
    background-color: var(--bg-yourmsg); 
     max-width: 100%;
-    justify-content: flex-end !important;
+
+}
+
+.user-text{
+    justify-content: flex-end ;
   
 }
 
-.your-text{
+.your-text .text{
     background-color: white;
-    
 }
 
 .ora-messaggio{
@@ -161,3 +160,4 @@ main{
     font-size: 0.8rem;
     color: var(--icons);
 }
+

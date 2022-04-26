@@ -98,8 +98,8 @@
                         </div>
                         <div class="chat-container">
                             <div class="chat-zone p-5">
-                                 <div class=" d-flex  mb-3"  v-for="text in contacts[activeUser].messages">
-                                   <div class=" rounded-3 p-2 position-relative" :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
+                                 <div class=" d-flex  mb-3 "  v-for="text in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
+                                   <div class=" rounded-3 text p-2 position-relative">
                                        <div class="mb-1" >{{text.message}}</div>
                                       <div class="position-absolute ora-messaggio"><small>12.40</small></div>
                                    </div>
