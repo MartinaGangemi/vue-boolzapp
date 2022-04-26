@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --ligh-bg: #D8DBD6;
+    --success-bg:#009688;
+    --lighter: #F3EEEA;
+    --bg-yourmsg:#D5F9BA;
+    --icons:#B1B1B1;
+    --light:#EAEAEA;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--ligh-bg);
+    position: relative;
+    
+}
+
+.top_green{
+    height: 10vh;
+    background-color: var(--success-bg);
+}
+
+
+.main_container{
+    width: 80vw;
+    height: 96vh;
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+    bottom: 8vh;
+}
+
+
+
+.chat{
+    width: 65%;
+}
+
+
+
+
+/* contacts zone */
+.contact{
+    width: 35%;
+}
+
+.immagine-profilo{
+    width: 50px;
+}
+
+.menu{
+    color: var(--icons);
+}
+
+.bg-user{
+    background-color: var(--light);
+
+}
