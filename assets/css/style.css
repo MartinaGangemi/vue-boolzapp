@@ -94,7 +94,7 @@ main{
 .contact-list{
     overflow: auto;
     overflow-y: scroll;
-    height: calc(96vh - 193.19px)
+    height: calc(96vh - 191px)
 }
 
 .contact{
@@ -104,10 +104,57 @@ main{
 /* chat zone */
 
 .chat{
-    width: 65%;
+    width: 66%;
     height: 96vh;
 }
 
 .contact-header{
     height: 66px;
+}
+
+.chat-container{
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 66px);
+    width: 100%;
+    position:relative ;
+    
+}
+
+.chat-zone{
+    overflow: auto;
+    overflow-y: scroll;
+    height: calc(100% - 46px);
+    padding: 0;
+}
+
+.write-msg{
+    position: absolute;
+    background-color: var(--lighter);
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: var(--icons);
+}
+
+.write>input{
+    border: none;
+    height: 30px;
+    width: 100%;
+}
+
+.your-text{
+   background-color: var(--bg-yourmsg); 
+ max-width: 100%;
+}
+
+.user-text{
+    background-color: white;
+}
+
+.ora-messaggio{
+    right: 1px;
+    bottom: 0;
+    font-size: 0.8rem;
+    color: var(--icons);
 }

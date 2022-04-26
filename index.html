@@ -78,7 +78,7 @@
 
                     <!-- chat -->
                     <div class="m-0 chat">
-                        <div class="contact-header d-flex  p-3  bg-user">
+                        <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user">
                             <div class="d-flex align-items-center " @click="chatWith(index)">
                                 <div class="immagine-profilo me-2">
                                     <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
@@ -89,7 +89,37 @@
                                     <small class="fw-light">Ultimo accesso oggi alle 12.00</small>
                                 </div>
                             </div>
+                            <div class="menu ">
+                                <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                <i class="fa-solid fa-paperclip me-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
                             
+                        </div>
+                        <div class="chat-container">
+                            <div class="chat-zone p-5" v-for="(text, index) in messages">
+                                <div class=" d-flex justify-content-end mb-3">
+                                   <div class=" rounded-3 your-text p-2 position-relative" >
+                                       <div class="mb-1" >{{contacts[activeUser].text.message}}</div>
+                                      <div class="position-absolute ora-messaggio"><small>12.40</small></div>
+                                   </div>
+                            
+                                </div>
+                                <!-- <div class=" d-flex mb-3">
+                                    <div class=" rounded-3 user-text p-2  position-relative">
+                                        <div class="mb-1"></div>
+                                      <div class="position-absolute ora-messaggio"><small>15.40</small></div>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                            
+                            <!-- scrivi un messaggio -->
+                            <div class="write-msg d-flex align-items-center justify-content-between p-2">
+                                <div><i class="fa-solid fa-face-smile flex-fill"></i></div>
+                                <div class="write flex-fill  p-2"><input type="text" class="p-2"  placeholder="Scrivi messaggio"></div>
+                                <div><i class="fa-solid fa-microphone flex-fill"></i></div>
+                            </div>
                         </div>
                     </div>
                 
