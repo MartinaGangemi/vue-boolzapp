@@ -97,20 +97,15 @@
                             
                         </div>
                         <div class="chat-container">
-                            <div class="chat-zone p-5" v-for="(text, index) in messages">
-                                <div class=" d-flex justify-content-end mb-3">
-                                   <div class=" rounded-3 your-text p-2 position-relative" >
-                                       <div class="mb-1" >{{contacts[activeUser].text.message}}</div>
+                            <div class="chat-zone p-5">
+                                 <div class=" d-flex  mb-3"  v-for="text in contacts[activeUser].messages">
+                                   <div class=" rounded-3 p-2 position-relative" :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
+                                       <div class="mb-1" >{{text.message}}</div>
                                       <div class="position-absolute ora-messaggio"><small>12.40</small></div>
                                    </div>
                             
                                 </div>
-                                <!-- <div class=" d-flex mb-3">
-                                    <div class=" rounded-3 user-text p-2  position-relative">
-                                        <div class="mb-1"></div>
-                                      <div class="position-absolute ora-messaggio"><small>15.40</small></div>
-                                    </div>
-                                </div> -->
+                                
 
                             </div>
                             

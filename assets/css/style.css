@@ -143,13 +143,16 @@ main{
     width: 100%;
 }
 
-.your-text{
+.user-text{
    background-color: var(--bg-yourmsg); 
- max-width: 100%;
+    max-width: 100%;
+    justify-content: flex-end !important;
+  
 }
 
-.user-text{
+.your-text{
     background-color: white;
+    
 }
 
 .ora-messaggio{
