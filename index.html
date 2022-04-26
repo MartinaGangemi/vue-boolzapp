@@ -18,7 +18,7 @@
                     <!--lista contatti -->
                     <div class=" m-0 left-menu">
                         <!-- profilo -->
-                        <div class="d-flex justify-content-between align-items-center p-2 bg-user">
+                        <div class="header-profilo d-flex justify-content-between align-items-center p-2 bg-user">
                             <div class="profilo_utente d-flex align-items-center  ">
                                 <div class="immagine-profilo me-2">
                                     <img class="rounded-circle img-fluid" src="./assets/img/avatar_io.jpg" alt="">
@@ -34,7 +34,7 @@
                         </div>
 
                         <!-- notifiche -->
-                        <div class="d-flex ustify-content-between align-items-center p-3 bg-notifiche">
+                        <div class="d-flex  align-items-center p-3 bg-notifiche notifiche">
                             <div class="bell rounded-circle d-flex align-items-center justify-content-center me-2">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
@@ -54,8 +54,8 @@
 
                         <!-- lista contatti -->
                         <div class="contact-list">
-                            <div class="border-bottom d-flex justify-content-between p-3" v-for="contact in contacts">
-                                <div class="contact d-flex flex-fill align-items-center  ">
+                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)">
+                                <div class=" d-flex flex-fill align-items-center  ">
                                     <div class="immagine-profilo me-2">
                                         <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
                                     </div>
@@ -77,8 +77,20 @@
                 
 
                     <!-- chat -->
-                    <div class=" bg-primary m-0 chat">
-                        prova
+                    <div class="m-0 chat">
+                        <div class="contact-header d-flex  p-3  bg-user">
+                            <div class="d-flex align-items-center " @click="chatWith(index)">
+                                <div class="immagine-profilo me-2">
+                                    <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
+                                </div>
+                                <div class="nickName flex-fill" >
+                                   {{contacts[activeUser].name}}
+                                    <br>
+                                    <small class="fw-light">Ultimo accesso oggi alle 12.00</small>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                 
             </div>

@@ -39,15 +39,19 @@ main{
 
 
 
-.chat{
-    width: 65%;
-    height: 96vh;
-}
-
 
 /* contacts zone */
 .left-menu{
     width: 35%;
+    height: 96vh;
+}
+
+.header-profilo{
+    height: 66px;
+}
+
+.notifiche{
+    height: 80px;
 }
 
 .immagine-profilo{
@@ -90,6 +94,20 @@ main{
 .contact-list{
     overflow: auto;
     overflow-y: scroll;
-    height: calc(100% - 193px);
+    height: calc(96vh - 193.19px)
+}
 
+.contact{
+    height: 80px;
+}
+
+/* chat zone */
+
+.chat{
+    width: 65%;
+    height: 96vh;
+}
+
+.contact-header{
+    height: 66px;
 }

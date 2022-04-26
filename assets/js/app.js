@@ -1,6 +1,9 @@
 const app = new Vue({
     el: "#app",
     data:{
+
+        activeUser:0,
+        
         contacts: [
             {
                 name: 'Michele',
@@ -162,11 +165,23 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                
             }
+            
         ]
         
+    },
+
+
+    methods:{
+        chatWith(index){
+            this.activeUser = index
+            console.log(index);
+        }
     }
 
 
 })
+
+
 
