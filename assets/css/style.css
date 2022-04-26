@@ -11,6 +11,7 @@
     --bg-yourmsg:#D5F9BA;
     --icons:#B1B1B1;
     --light:#EAEAEA;
+    --bg-notifiche:#8EDAFC;
 }
 
 main{
@@ -18,7 +19,7 @@ main{
     height: 100vh;
     background-color: var(--ligh-bg);
     position: relative;
-    
+
 }
 
 .top_green{
@@ -40,13 +41,12 @@ main{
 
 .chat{
     width: 65%;
+    height: 96vh;
 }
 
 
-
-
 /* contacts zone */
-.contact{
+.left-menu{
     width: 35%;
 }
 
@@ -60,5 +60,36 @@ main{
 
 .bg-user{
     background-color: var(--light);
+
+}
+
+.bg-notifiche{
+    background-color: var(--bg-notifiche);
+}
+
+.bell{
+    background-color: white;
+    color: var(--bg-notifiche);
+    height: 50px;
+    width: 50px;
+}
+
+.search-btn{
+    border: solid 1px #ccc;
+    padding: 0.1rem;
+    color: #ccc;
+}
+
+.form-search{
+    border: #ccc solid 1px;
+    width: calc(100% - 66px)
+}
+
+
+
+.contact-list{
+    overflow: auto;
+    overflow-y: scroll;
+    height: calc(100% - 193px);
 
 }

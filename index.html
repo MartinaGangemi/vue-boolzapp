@@ -10,28 +10,69 @@
     <script src="https://kit.fontawesome.com/6ab09c9efe.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main id="app">
         <div class="top_green"></div>
     
         <div class="main_container">
             <div class="d-flex">
                     <!--lista contatti -->
-                    <div class=" m-0 contact">
+                    <div class=" m-0 left-menu">
                         <!-- profilo -->
                         <div class="d-flex justify-content-between align-items-center p-2 bg-user">
                             <div class="profilo_utente d-flex align-items-center  ">
                                 <div class="immagine-profilo me-2">
                                     <img class="rounded-circle img-fluid" src="./assets/img/avatar_io.jpg" alt="">
                                 </div>
-                                <div class="nickName"><b>Sona</b></div>
+                                <div class="nickName">Sona</div>
                             </div>
-                            <!-- menù a destra -->
+                            <!--icone a destra -->
                             <div class="menu">
                                 <i class="fa-solid fa-circle-notch me-2"></i>
                                 <i class="fa-solid fa-message me-2"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
+
+                        <!-- notifiche -->
+                        <div class="d-flex ustify-content-between align-items-center p-3 bg-notifiche">
+                            <div class="bell rounded-circle d-flex align-items-center justify-content-center me-2">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="ricevinotifichetext lh-1">
+                                Ricevi Notifiche di nuovi Messaggi
+                                <br>
+                                <small class="fw-light"><u>Attiva notifiche desktop</u></small>
+                                
+                            </div>
+                        </div>
+
+                        <!-- cerca -->
+                        <div class="search p-2 d-flex">
+                            <div class="search-btn px-4 rounded-start border-end-0"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input type="text" class="form-search rounded-end" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <!-- lista contatti -->
+                        <div class="contact-list">
+                            <div class="border-bottom d-flex justify-content-between p-3" v-for="contact in contacts">
+                                <div class="contact d-flex flex-fill align-items-center  ">
+                                    <div class="immagine-profilo me-2">
+                                        <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
+                                    </div>
+                                    <div class="nickName flex-fill" >
+                                        {{contact.name}}
+                                        <br>
+                                        <small class="fw-light">Ultimo messaggio inviato</small>
+                                    </div>
+                                </div>
+                                <!--messaggio -->
+                                <div class="ora ">
+                                    <small class="fw-light">12.00</small>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 
 
@@ -43,5 +84,8 @@
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/app.js"></script>
+    
 </body>
 </html>
