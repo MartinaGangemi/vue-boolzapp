@@ -5,6 +5,8 @@ const app = new Vue({
         activeUser:0,
         newMessage:"",
         nomeUtente:"",
+        low1:"",
+        low2:"",
         
         contacts: [
             {
@@ -182,6 +184,8 @@ const app = new Vue({
             return hour.substring(0,5);
         },
 
+        
+
          addMessage(i){
            newMsg = {date: '10/01/2020 15:40:00',
            message: this.newMessage,
@@ -199,31 +203,34 @@ const app = new Vue({
                 message: "ok!",
                 status: 'received'}  
                 this.contacts[i].messages.push(message) 
-            }, 1000)
-            }
+            }, 1000)}
+
+           
         },
     },
     
     computed: {
         
-        filteredList() {
-            // return this.contacts.filter((element, index)=> {
-            // nome = element.name.toLowerCase()
-            // filterName = nome.includes(this.nomeUtente.toLowerCase())
-            // if (nome.includes(filterName)){
-            //     element.visible = "true"
+        
+        
+        //  filteredList() {
+        //      return this.contacts.filter((element, index)=> {
+        //      nome = element.name.toLowerCase()
+        //      filterName = nome.includes(this.nomeUtente.toLowerCase())
+        //      if (nome.includes(filterName)){
+        //          element.visible = "true"
                 
-            // } else if(nome =! filterName){
-            //     element.visible = "false"
+        //      } else if(nome =! filterName){
+        //          element.visible = "false"
                 
-            // }
-            // return nome, filterName
-            // })
-            return this.contacts.filter(element => {
-            return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
-            })
+        //      }
+        //      return nome, filterName
+        //      })
+        //      return this.contacts.filter(element => {
+        // return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
+        //      })
             
-          }
+        // }
     }
 })
 

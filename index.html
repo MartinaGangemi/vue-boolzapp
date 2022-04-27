@@ -49,12 +49,13 @@
                         <!-- cerca -->
                         <div class="search p-2 d-flex">
                             <div class="search-btn px-4 d-flex justify-content-center align-items-center rounded-start border-end-0"><i class="fa-solid fa-magnifying-glass"></i></div>
-                            <input type="text" class="form-control form-search" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="nomeUtente" >
+                            <input type="text" class="form-control form-search" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="nomeUtente"  >
                         </div>
 
                         <!-- lista contatti -->
                         <div class="contact-list">
-                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in filteredList" @click="chatWith(index)" :class="activeUser === index ? 'active' : ''" >
+                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="activeUser === index ? 'active' : ''"  v-if="contact.name.toLowerCase().includes(nomeUtente.toLowerCase())"  >
+                                
                                 <div class=" d-flex flex-fill align-items-center  ">
                                     <div class="immagine-profilo me-2">
                                         <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
@@ -69,6 +70,7 @@
                                 <div class="ora ">
                                     <small class="fw-light">12.00</small>
                                 </div>
+                            
                             </div>
                         </div>
 
@@ -81,10 +83,10 @@
                         <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user">
                             <div class="d-flex align-items-center " >
                                 <div class="immagine-profilo me-2">
-                                    <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${filteredList[activeUser].avatar}.jpg`" alt="">
+                                    <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
                                 </div>
                                 <div class="nickName flex-fill" >
-                                   {{filteredList[activeUser].name}}
+                                   {{contacts[activeUser].name}}
                                     <br>
                                     <small class="fw-light">Ultimo accesso oggi alle 12.00</small>
                                 </div>
