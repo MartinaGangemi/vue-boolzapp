@@ -205,10 +205,24 @@ const app = new Vue({
     },
     
     computed: {
+        
         filteredList() {
+            // return this.contacts.filter((element, index)=> {
+            // nome = element.name.toLowerCase()
+            // filterName = nome.includes(this.nomeUtente.toLowerCase())
+            // if (nome.includes(filterName)){
+            //     element.visible = "true"
+                
+            // } else if(nome =! filterName){
+            //     element.visible = "false"
+                
+            // }
+            // return nome, filterName
+            // })
             return this.contacts.filter(element => {
             return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
             })
+            
           }
     }
 })
