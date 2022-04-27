@@ -181,22 +181,36 @@ const app = new Vue({
             return hour.substring(0,5);
       },
 
+        
+        
+        
+
         addMessage(i){
            newMsg = {date: '10/01/2020 15:40:00',
            message: this.newMessage,
            status: 'sent'}  
+           
            if(this.newMessage==" "){
             
            }else{
             this.contacts[i].messages.push(newMsg)
-            this.newMessage=" "
-           }
+            this.newMessage=" ",
+            
+                
+            setTimeout(() => {
+                const message = {date: '10/01/2020 15:40:00',
+                message: "ok!",
+                status: 'received'}  
+                this.contacts[i].messages.push(message) 
+            }, 1000)
+            }
+            
            
-        }
-    
-    }
-    
+        },
 
+    },
+    
+    
 })
 
 
