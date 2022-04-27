@@ -3,7 +3,8 @@ const app = new Vue({
     data:{
         
         activeUser:0,
-        newMessage:" ",
+        newMessage:"",
+        nomeUtente:"",
         
         contacts: [
             {
@@ -179,13 +180,9 @@ const app = new Vue({
         getHours(date){
             const hour = date.split(' ')[1];
             return hour.substring(0,5);
-      },
+        },
 
-        
-        
-        
-
-        addMessage(i){
+         addMessage(i){
            newMsg = {date: '10/01/2020 15:40:00',
            message: this.newMessage,
            status: 'sent'}  
@@ -204,13 +201,16 @@ const app = new Vue({
                 this.contacts[i].messages.push(message) 
             }, 1000)
             }
-            
-           
         },
-
     },
     
-    
+    computed: {
+        filteredList() {
+            return this.contacts.filter(element => {
+            return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
+            })
+          }
+    }
 })
 
 
