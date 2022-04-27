@@ -48,13 +48,13 @@
 
                         <!-- cerca -->
                         <div class="search p-2 d-flex">
-                            <div class="search-btn px-4 rounded-start border-end-0"><i class="fa-solid fa-magnifying-glass"></i></div>
-                            <input type="text" class="form-search rounded-end" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <div class="search-btn px-4 d-flex justify-content-center align-items-center rounded-start border-end-0"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input type="text" class="form-control form-search" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 
                         <!-- lista contatti -->
                         <div class="contact-list">
-                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)">
+                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="activeUser === index ? 'active' : ''">
                                 <div class=" d-flex flex-fill align-items-center  ">
                                     <div class="immagine-profilo me-2">
                                         <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
@@ -79,7 +79,7 @@
                     <!-- chat -->
                     <div class="m-0 chat">
                         <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user">
-                            <div class="d-flex align-items-center " @click="chatWith(index)">
+                            <div class="d-flex align-items-center " >
                                 <div class="immagine-profilo me-2">
                                     <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
                                 </div>
@@ -101,7 +101,7 @@
                                  <div class=" d-flex  mb-3 "  v-for="text in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
                                    <div class=" rounded-3 text p-2 position-relative">
                                        <div class="mb-1" >{{text.message}}</div>
-                                      <div class="position-absolute ora-messaggio"><small>12.40</small></div>
+                                      <div class="position-absolute ora-messaggio"><small>{{getHours(text.date)}} </small></div>
                                    </div>
                             
                                 </div>
@@ -112,7 +112,7 @@
                             <!-- scrivi un messaggio -->
                             <div class="write-msg d-flex align-items-center justify-content-between p-2">
                                 <div><i class="fa-solid fa-face-smile flex-fill"></i></div>
-                                <div class="write flex-fill  p-2"><input type="text" class="p-2"  placeholder="Scrivi messaggio"></div>
+                                <div class="flex-fill  p-2"><input v-model="newMessage" type="text" class="write form-control p-2"  placeholder="Scrivi messaggio"  @keyup.enter="addMessage (activeUser)" ></div>
                                 <div><i class="fa-solid fa-microphone flex-fill"></i></div>
                             </div>
                         </div>

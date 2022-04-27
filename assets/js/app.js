@@ -1,8 +1,9 @@
 const app = new Vue({
     el: "#app",
     data:{
-
+        
         activeUser:0,
+        newMessage:" ",
         
         contacts: [
             {
@@ -140,7 +141,7 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:50:00',
                         message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                        status: 'received'
+                        status: 'received',
                     }
                 ],
             },
@@ -162,24 +163,39 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:51:00',
                         message: 'OK!!',
-                        status: 'received'
+                        status: 'received',
                     }
                 ],
-                
             }
-            
         ]
-        
     },
 
 
     methods:{
         chatWith(index){
             this.activeUser = index
-            console.log(index);
-        }
-    }
+        },
 
+        getHours(date){
+            const hour = date.split(' ')[1];
+            return hour.substring(0,5);
+      },
+
+        addMessage(i){
+           newMsg = {date: '10/01/2020 15:40:00',
+           message: this.newMessage,
+           status: 'sent'}  
+           if(this.newMessage==" "){
+            
+           }else{
+            this.contacts[i].messages.push(newMsg)
+            this.newMessage=" "
+           }
+           
+        }
+    
+    }
+    
 
 })
 

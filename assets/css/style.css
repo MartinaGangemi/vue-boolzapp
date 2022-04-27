@@ -81,20 +81,36 @@ main{
 }
 
 .form-search{
-    border: #ccc solid 1px;
-    width: calc(100% - 66px)
+    border: #ccc solid 1px !important;
+    width: calc(100% - 66px);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
+
+.form-search:focus-visible{
+    box-shadow: none;
+}
+
 
 
 
 .contact-list{
     overflow: auto;
     overflow-y: scroll;
-    height: calc(96vh - 191px)
+    height: calc(96vh - 200px)
 }
 
 .contact{
     height: 80px;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: #E9EBEB;
+}
+
+.active{
+    background-color: #E9EBEB;
 }
 
 /* chat zone */
@@ -133,10 +149,14 @@ main{
     color: var(--icons);
 }
 
-.write>input{
+.write{
     border: none;
     height: 30px;
     width: 100%;
+}
+
+.write:focus-visible{
+    box-shadow: none;
 }
 
 .user-text .text{
