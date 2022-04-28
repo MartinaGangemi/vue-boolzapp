@@ -186,13 +186,14 @@ const app = new Vue({
         },
 
         filterMessage(){
-            this.contacts.array.forEach(contact => {
+            this.contacts.forEach(contact => {
                 if(contact.name.toLowerCase().includes(this.nomeUtente.toLowerCase())){
                 contact.visible = true
             } else {
                 contact.visible= false
                 }
             })
+            console.log("ciao")
         } ,   
         
 
