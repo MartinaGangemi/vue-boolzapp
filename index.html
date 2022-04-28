@@ -49,12 +49,12 @@
                         <!-- cerca -->
                         <div class="search p-2 d-flex">
                             <div class="search-btn px-4 d-flex justify-content-center align-items-center rounded-start border-end-0"><i class="fa-solid fa-magnifying-glass"></i></div>
-                            <input @click="filterMessage" type="text" class="form-control form-search" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="nomeUtente">
+                            <input v-on:keyup="filterMessage" type="text" class="form-control form-search" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="nomeUtente">
                         </div>
 
                         <!-- lista contatti -->
                         <div class="contact-list">
-                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="activeUser === index ? 'active' : ''"  v-if="contact.name.toLowerCase().includes(nomeUtente.toLowerCase())"  >
+                            <div class="contact border-bottom d-flex justify-content-between p-3" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="activeUser === index ? 'active' : ''"  v-if="contact.visible===true"  >
                                 
                                 <div class=" d-flex flex-fill align-items-center  ">
                                     <div class="immagine-profilo me-2">
@@ -101,7 +101,7 @@
                         <div class="chat-container position-relative">
                             <div class="chat-zone p-5 ">
                                 <div class=" d-flex  mb-3 "  v-for="text in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
-                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center">
+                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center" @click="message-info">
                                         <div class="mb-1 me-2" >{{text.message}}</div>
                                         <div class="position-absolute ora-messaggio"><small>{{getHours(text.date)}} </small></div>
                                         <div class="message-arrow  dropdown ">
