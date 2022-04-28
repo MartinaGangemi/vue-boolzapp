@@ -97,7 +97,7 @@ main{
 .contact-list{
     overflow: auto;
     overflow-y: scroll;
-    height: calc(96vh - 200px)
+    height: calc(96vh - 200px);
 }
 
 .contact{
@@ -181,3 +181,31 @@ main{
     color: var(--icons);
 }
 
+.message-arrow{
+    color: #94A785;
+    cursor: pointer;
+}
+.dropdown:active .dropdown-content{
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 20px;
+    background-color: white;
+    width: 180px;
+    z-index: 3;
+}
+
+.position-left{
+    left: 0;
+}
+
+.position-right{
+    right: 0;
+}
+
+ul li{
+    list-style: none;
+}

@@ -5,8 +5,9 @@ const app = new Vue({
         activeUser:0,
         newMessage:"",
         nomeUtente:"",
-        low1:"",
-        low2:"",
+        
+        
+        
         
         contacts: [
             {
@@ -184,13 +185,28 @@ const app = new Vue({
             return hour.substring(0,5);
         },
 
+        filterMessage(){
+            this.contacts.array.forEach(contact => {
+                if(contact.name.toLowerCase().includes(this.nomeUtente.toLowerCase())){
+                contact.visible = true
+            } else {
+                contact.visible= false
+                }
+            })
+        } ,   
         
 
-         addMessage(i){
-           newMsg = {date: '10/01/2020 15:40:00',
-           message: this.newMessage,
-           status: 'sent'}  
-           
+        addMessage(i){
+            const d = new Date ()
+            let ora = d.getHours()
+            let minuti = d.getMinutes()
+            if(ora.toString().length == 1 ) ora = "0"+ora;
+            if(minuti.toString().length == 1 ) minuti = "0"+minuti;
+            const orario = `dd/mm/yyyy ${ora}:${minuti}:ss`
+            newMsg = {date: orario,
+            message: this.newMessage,
+            status: 'sent'}  
+            
            if(this.newMessage==" "){
             
            }else{
@@ -199,40 +215,42 @@ const app = new Vue({
             
                 
             setTimeout(() => {
-                const message = {date: '10/01/2020 15:40:00',
+                const message = {date: orario,
                 message: "ok!",
                 status: 'received'}  
-                this.contacts[i].messages.push(message) 
+                this.contacts[i].messages.push(message)
+                
             }, 1000)}
-
-           
+            console.log(orario);
+        return orario , ora, minuti 
         },
-    },
-    
-    computed: {
-        
-        
-        
-        //  filteredList() {
-        //      return this.contacts.filter((element, index)=> {
-        //      nome = element.name.toLowerCase()
-        //      filterName = nome.includes(this.nomeUtente.toLowerCase())
-        //      if (nome.includes(filterName)){
-        //          element.visible = "true"
-                
-        //      } else if(nome =! filterName){
-        //          element.visible = "false"
-                
-        //      }
-        //      return nome, filterName
-        //      })
-        //      return this.contacts.filter(element => {
-        // return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
-        //      })
-            
-        // }
     }
 })
+    
+//     computed: {
+        
+        
+        
+//         //  filteredList() {
+//         //      return this.contacts.filter((element, index)=> {
+//         //      nome = element.name.toLowerCase()
+//         //      filterName = nome.includes(this.nomeUtente.toLowerCase())
+//         //      if (nome.includes(filterName)){
+//         //          element.visible = "true"
+                
+//         //      } else if(nome =! filterName){
+//         //          element.visible = "false"
+                
+//         //      }
+//         //      return nome, filterName
+//         //      })
+//         //      return this.contacts.filter(element => {
+//         // return element.name.toLowerCase().includes(this.nomeUtente.toLowerCase())
+//         //      })
+            
+//         // }
+    
+
 
 
 
