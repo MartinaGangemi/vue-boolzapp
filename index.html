@@ -81,7 +81,7 @@
                     <!-- chat -->
                     <div class="m-0 chat">
                         <!-- contatto -->
-                        <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user">
+                        <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user" >
                             <div class="d-flex align-items-center " >
                                 <div class="immagine-profilo me-2">
                                     <img class="rounded-circle img-fluid" :src="`./assets/img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
@@ -89,7 +89,7 @@
                                 <div class="nickName flex-fill" >
                                    {{contacts[activeUser].name}}
                                     <br>
-                                    <small class="fw-light">Ultimo accesso oggi alle 12.00</small>
+                                    <small class="fw-light" v-for="(ora, index) in contacts[activeUser].messages">Ultimo accesso oggi alle {{getHours(ora.date)}} </small>
                                 </div>
                             </div>
                             <div class="menu ">
