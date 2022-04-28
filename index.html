@@ -89,7 +89,7 @@
                                 <div class="nickName flex-fill" >
                                    {{contacts[activeUser].name}}
                                     <br>
-                                    <small class="fw-light">Ultimo messaggio alle {{getHours(contacts[activeUser].messages.length.date)}}</small>
+                                    <small class="fw-light">Ultimo messaggio alle {{getHours(contacts[activeUser].messages[contacts[activeUser].messages.length-1].date)}}</small>
                                 </div>
                             </div>
                             <div class="menu ">
