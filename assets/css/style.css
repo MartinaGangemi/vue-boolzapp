@@ -184,26 +184,28 @@ main{
 .message-arrow{
     color: #94A785;
 }
-.dropdown:active .dropdown-content{
+.dropdown:hover .dropdown-content{
     display: inline-block;
 }
 
 .dropdown-content{
+    display: none;
     position: absolute;
-    top: 20px;
+    top: 30px;
     background-color: white;
     width: 180px;
     z-index: 3;
 }
 
 .position-left{
-    left: 0;
+    left: 5px;
 }
 
 .position-right{
-    right: 0;
+    right: 5px;
 }
 
 ul li{
     list-style: none;
+    cursor: pointer;
 }

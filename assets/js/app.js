@@ -195,6 +195,10 @@ const app = new Vue({
             })
             console.log("ciao")
         } ,   
+
+        deleteMsg(i){
+            this.contacts[this.activeUser].messages.splice(i,1)
+        },
         
 
         addMessage(i){

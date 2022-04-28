@@ -80,6 +80,7 @@
 
                     <!-- chat -->
                     <div class="m-0 chat">
+                        <!-- contatto -->
                         <div class="contact-header d-flex justify-content-between p-3 align-items-center  bg-user">
                             <div class="d-flex align-items-center " >
                                 <div class="immagine-profilo me-2">
@@ -96,23 +97,27 @@
                                 <i class="fa-solid fa-paperclip me-2"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
-                            
                         </div>
                         <div class="chat-container position-relative">
                             <div class="chat-zone p-5 ">
-                                <div class=" d-flex  mb-3 "  v-for="text in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
-                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center" @click="message-info">
+                                <div class=" d-flex  mb-3 "  v-for="(text, index) in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
+                                    <!-- testo messaggio -->
+                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center   dropdown " @click="message-info">
                                         <div class="mb-1 me-2" >{{text.message}}</div>
-                                        <div class="position-absolute ora-messaggio"><small>{{getHours(text.date)}} </small></div>
-                                        <div class="message-arrow  dropdown ">
+                                        <!-- ora messaggio -->
+                                        <div class="position-absolute ora-messaggio">
+                                            <small>{{getHours(text.date)}} </small>
+                                        </div>
+                                        <div class="message-arrow">
                                             <i class="fa-solid fa-chevron-down "></i> 
+                                        </div>
                                             <div class="dropdown-content rounded-3 shadow-sm" :class="text.status === 'sent' ? 'position-right' : 'position-left' ">
                                                 <ul class="mt-3">
                                                     <li>info messaggio</li>
-                                                    <li>elimina messaggio</li>
+                                                    <li @click="deleteMsg(index)">elimina messaggio</li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        
                                     </div>
 
                                      
