@@ -63,12 +63,13 @@
                                     <div class="nickName flex-fill" >
                                         {{contact.name}}
                                         <br>
-                                        <small class="fw-light">Ultimo messaggio inviato</small>
+                                        <small class="fw-light" v-if="contact.messages.length > 0">Ultimo messaggio inviato </small>
+                                        <small class="fw-light" v-else> Inizia una conversazione</small>
                                     </div>
                                 </div>
                                 <!--messaggio -->
                                 <div class="ora ">
-                                    <small class="fw-light"></small>
+                                    <small class="fw-light" v-if="contact.messages.length > 0">{{getHours(contact.messages[contact.messages.length-1].date)}}</small>
                                 </div>
                             
                             </div>
@@ -89,7 +90,8 @@
                                 <div class="nickName flex-fill" >
                                    {{contacts[activeUser].name}}
                                     <br>
-                                    <small class="fw-light">Ultimo messaggio alle {{getHours(contacts[activeUser].messages[contacts[activeUser].messages.length-1].date)}}</small>
+                                    <small class="fw-light" v-if="contacts[activeUser].messages.length > 0">Ultimo messaggio alle {{getHours(contacts[activeUser].messages[contacts[activeUser].messages.length-1].date)}}</small>
+                                    <small v-else class="fw-light">nessun messaggio da mostrare</small>
                                 </div>
                             </div>
                             <div class="menu ">
