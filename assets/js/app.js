@@ -193,7 +193,6 @@ const app = new Vue({
                 contact.visible= false
                 }
             })
-            console.log("ciao")
         } ,   
 
         deleteMsg(i){
@@ -227,6 +226,7 @@ const app = new Vue({
                 
             }, 1000)}
             console.log(orario);
+            e.preventDefault();
         return orario , ora, minuti 
         },
     }

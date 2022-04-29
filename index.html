@@ -104,8 +104,8 @@
                             <div class="chat-zone p-5 ">
                                 <div class=" d-flex  mb-3 "  v-for="(text, index) in contacts[activeUser].messages"  :class="text.status === 'sent' ? 'user-text ' : 'your-text'">
                                     <!-- testo messaggio -->
-                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center   dropdown" >
-                                        <div class="mb-1 me-2 dropdown-toggle"  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">{{text.message}}</div>
+                                    <div class=" rounded-3 text p-2 position-relative d-flex align-items-center   dropdown" style="max-width: 300px;" >
+                                        <div class="mb-1 me-2 "  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">{{text.message}}</div>
                                         <!-- ora messaggio -->
                                         <div class="position-absolute ora-messaggio">
                                             <small>{{getHours(text.date)}} </small>

@@ -162,7 +162,6 @@ main{
 .user-text .text{
    background-color: var(--bg-yourmsg); 
     max-width: 100%;
-
 }
 
 .user-text{
@@ -211,3 +210,5 @@ a{
 .dropdown-toggle::after {
     display: none;
 }
+
+
